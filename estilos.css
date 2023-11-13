@@ -1,0 +1,106 @@
+/* estilos.css */
+
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.logo{
+    display: flex;
+}
+.logo img {
+    width: 300px; /* Tamaño */
+    height: auto; 
+    margin: 10px 0;
+}
+
+.header {
+    padding: 10px;
+    display: flex;
+}
+
+
+
+.menu {
+    /*color rgb*/
+    background: linear-gradient(
+        90deg,
+        rgb(0, 0, 0)0%,
+        rgb(124, 71, 2)70%
+    );
+    padding: 10px;
+}
+
+.menu a {
+    justify-content: space-between;
+    color: orange;
+    margin-right: 20px;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    font-weight: 600px;
+    padding-right: 10px;
+    
+    transition: border-bottom 0.3s ease;
+}
+
+.menu a:hover {
+    text-decoration: underline;
+    border-bottom: 2px solid rgb(194, 97, 6);
+    color: white;
+}
+
+.page-section {
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid #444;
+}
+
+.page-section h2 {
+    color: orange;
+}
+
+.page-section p {
+    line-height: 1.5;
+}
+
+.footer {
+    padding: 10px;
+    background-color: #333;
+}
+
+.imagen1{
+    width: 100px; 
+    border: 2px solid #333; 
+    margin: 10px 0;
+}
+
+/*Pie de pagina*/
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.footer-content {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+/* Estilo para los enlaces en el pie de página */
+.footer a {
+    color: orange;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: white;
+}
+

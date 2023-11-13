@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Método de Jacobi</title>
+    <script defer src="https://app.embed.im/snow.js"></script>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header>
+        <div class="content"> 
+            <div class="menu container">
+                <a href="#" class="logo">
+                    <img src="img/logo3.png" alt="">
+                </a>
+                <a href="#introduccuion">Introducción</a>
+                <a href="#descripcion">Descripción</a>
+                <a href="#convergencia">Convergencia</a>
+                <a href="#algoritmo">Algoritmo</a>
+                <a href="#ejemplo">Ejemplo</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-section" id="introduccion">
+        <h2>Introducción</h2>
+        <!-- Contenido de la introducción -->
+        <p>
+            Había una vez un matemático visionario llamado Carl Gustav Jacobi, nacido en Potsdam, Prusia, en 1804.
+            Jacobi tenía una mente inquisitiva y apasionada por resolver los desafíos matemáticos más complejos de su época. 
+            Su historia se entrelaza con el desarrollo de un método revolucionario en el campo de las matemáticas, que ahora lleva su nombre: el método de Jacobi.
+            <br>
+            <img class="imagen1" src="img/CarJ.jpg" alt="">
+            <br>
+            A mediados del siglo XIX, la comunidad matemática estaba inmersa en la resolución de sistemas de ecuaciones lineales, un problema de gran relevancia en la ciencia, la ingeniería y la física.
+            Estos sistemas surgían en una variedad de aplicaciones prácticas, como la predicción del movimiento planetario, la conducción del calor en sólidos o la distribución de corrientes eléctricas. 
+            Resolver estas ecuaciones era una tarea ardua y laboriosa, y Jacobi se propuso encontrar una forma más eficiente de hacerlo.
+            <br>
+
+            <br>
+            La historia de Jacobi y su método se desarrolla en su apasionante búsqueda de una solución a este desafío. 
+            En sus noches de insomnio, Carl Gustav Jacobi se sumía en profundos pensamientos y cálculos. Llegó a darse cuenta de que podía diseñar un método que permitiera descomponer el sistema de ecuaciones en una serie de ecuaciones más sencillas, una a la vez. 
+            Así nació el método de Jacobi, que se basa en la idea de iterar una y otra vez, mejorando constantemente las aproximaciones de las soluciones.
+            <br>
+            <br>
+            El método de Jacobi se convirtió en una herramienta esencial en el campo de las matemáticas aplicadas y la computación numérica. Su enfoque ingenioso de dividir y conquistar permitió a los científicos y los ingenieros abordar problemas complejos con mayor eficiencia y precisión. 
+            La historia de Jacobi y su método nos recuerda el poder de la perseverancia y la creatividad en la resolución de problemas matemáticos, y cómo una idea brillante puede cambiar para siempre la forma en que enfrentamos los desafíos del mundo real.
+        </p>
+    </div>
+
+    <div class="page-section" id="descripcion">
+        <h2>Descripción</h2>
+        <!-- Contenido de la descripción -->
+        <p>
+            La base del método consiste en construir una sucesión convergente definida iterativamente. 
+            El límite de esta sucesión es precisamente la solución del sistema.
+            A efectos prácticos si el algoritmo se detiene después de un número finito de pasos se llega a una aproximación al valor de x de la solución del sistema.
+            <br>
+            La sucesión se construye descomponiendo la matriz del sistema A en la forma siguiente:
+            <br>
+            <img src="img/f1.png" alt="">
+            <br>
+            donde D, es una matriz diagonal y R es la suma de una matriz triangular inferior L y una matriz triangular superior U , luego R=L+U Partiendo de Ax=b podemos reescribir dicha ecuación como:
+            <br>
+            <img src="img/f2.png" alt="">
+            <br>
+            Luego,
+            <br>
+            <img src="img/f3.png" alt="">
+            <br>
+            Si a¡¡ ≠ 0 para cada i. Por la regla iterativa, la definición del Método de Jacobi puede ser expresado de la forma:
+            <br>
+            <img src="img/f4.png" alt="">
+            <br>
+            donde k es el contador de iteración, Finalmente tenemos:
+            <br>
+            <img src="img/f5.png" alt="">
+            <br>
+            Cabe destacar que al calcular xi^(k+1) se necesitan todos los elementos en x^(k), excepto el que tenga el mismo i. 
+            Por eso, al contrario que en el método Gauss-Seidel, no se puede sobreescribir xi^(k) con xi^(k+1), ya que su valor será necesario para el resto de los cálculos. 
+            Esta es la diferencia más significativa entre los métodos de Jacobi y Gauss-Seidel. 
+            La cantidad mínima de almacenamiento es de dos vectores de dimensión n, y será necesario realizar un copiado explícito.
+        </p>
+    </div>
+
+    <div class="page-section" id="convergencia">
+        <h2>Convergencia</h2>
+        <!-- Contenido de la convergencia -->
+        <p>
+            El método de Jacobi siempre converge si la matriz A es estrictamente diagonal dominante y puede converger incluso si esta condición no se satisface.
+            <br>
+            Para verificar la convergencia del método se calcula el radio espectral (p):
+            <br>
+            <img src="img/f6.png" alt="">
+            <br>
+            es la condición necesaria y suficiente para la convergencia, siendo R = L + U . 
+            No es necesario que los elementos de la diagonal en la matriz sean mayores 
+            (en magnitud) que los otros elementos (la matriz es diagonalmente dominante), 
+            pero en el caso de serlo, la matriz converge.
+            <br>
+        </p>
+    </div>
+
+    <div class="page-section" id="algoritmo">
+        <h2>Algoritmo</h2>
+        <!-- Contenido del algoritmo -->
+        <p>
+            El método de Jacobi se puede escribir en forma de algoritmo de la siguiente manera:
+            <br>
+            <img src="img/f7.png" alt="">
+        </p>
+    </div>
+
+    <div class="page-section" id="ejemplo">
+        <h2>Ejemplo</h2>
+        <!-- Contenido del ejemplo -->
+        <p>
+            Un sistema lineal de la forma Ax=b con una estimacion inicial x^(0) esta dado por:
+            <br>
+            <img src="img/f8.png" alt="">
+            <br>
+            Usamos la ecuación x^(k+1)=D^-1(b-Rx^(k)), descrita anteriormente,
+            para estimar x. Primero, reescribimos la ecuacion de una manera más conveniente D^-1(b-Rx^(k))=Tx^(k)+C,donde T=-D^-1R y C=D^-1b. 
+            vea que R=L+U donde L y U son las partes inferior y superior de A. de los valores conocidos:
+            <br>
+            <img src="img/f9.png" alt="">
+            <br>
+            determinemos T=-D^-1(L+U)como:
+            <br>
+            <img src="img/f10.png" alt="">
+            <br>
+            C es encontrado como:
+            <br>
+            <img src="img/f11.png" alt="">
+            <br>
+            con T y C calculadas, estiaremos x como x^(1)=Tx^(0)+C:
+            <br>
+            <img src="img/f12.png" alt="">
+            <br>
+            siguientes interaciones.
+            <br>
+            <img src="img/f13.png" alt="">
+            <br>
+            este proceso se repitira hasta que converja(i.e.,hasta que ||Ax^(n)-b|| sea pequeño).
+            la solucion despues de 25 interaciones es:
+            <br>
+            <img src="img/f14.png" alt="">
+        </p>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2023 WikiHub. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    
+</body>
+</html>
